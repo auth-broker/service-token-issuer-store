@@ -1,8 +1,6 @@
 <div align="center">
 
-# Python Package Template
-
-The template repository for creating python packages, shared across auth-broker.
+# Token Issuer Store Service
 
 ![Python](https://img.shields.io/badge/Python-3.12-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![UV](https://img.shields.io/badge/UV-Fast-6E40C9?style=for-the-badge)
@@ -25,23 +23,6 @@ The template repository for creating python packages, shared across auth-broker.
 
 ______________________________________________________________________
 
-## Template Checklist
-
-- \[ \] Rename module `src/ab_core/template` ->
-  `src/ab_core/your_package_name`
-- \[ \] Rename tests module `src/ab_core/template` ->
-  `src/ab_core/your_package_name`
-- \[ \] Update `pyproject.toml`: `[project]` section based on your package name
-  / versioning etc.
-- \[ \] Update `README.md` references of `python-package-template` ->
-  `your-package-name`
-- \[ \] Update Dockerfile entrypoint
-- \[ \] Update docker compose port entrypoint
-- \[ \] Update vscode launch.json port and entrypoint
-- \[ \] Remove this section
-
-______________________________________________________________________
-
 ## Table of Contents
 
 <!-- toc -->
@@ -59,11 +40,7 @@ ______________________________________________________________________
 
 ## Introduction
 
-This template repository aims to create a reusable package template which
-streamlines the creation and publishing of isolated python packages in auth-broker.
-This is aligned with the engineering vision @ auth-broker for better modularisation and
-reusability of code.
-
+FastAPI service for storing user managed token issuer configurations
 ______________________________________________________________________
 
 ## Quick Start
@@ -141,7 +118,7 @@ command:
 **Using pip**:
 
 ```shell
-pip install python-package-template
+pip install ab-token-issuer-store-service
 ```
 
 **Using UV**
@@ -152,7 +129,7 @@ provide the full url. https://github.com/astral-sh/uv/issues/10140
 Add the dependency
 
 ```shell
-uv add python-package-template
+uv add ab-token-issuer-store-service
 ```
 
 **Using poetry**:
@@ -160,7 +137,7 @@ uv add python-package-template
 Then run the following command to install the package:
 
 ```shell
-poetry add python-package-template
+poetry add ab-token-issuer-store-service
 ```
 
 ### How tos
@@ -204,4 +181,4 @@ We publish to PyPI using Github releases. Steps are as follows:
    will trigger the `publish` workflow. In the Release window, type in the
    version number and it will prompt to create a new tag.
 1. Verify the release in
-   [PyPI](https://pypi.org/project/python-package-template/)
+   [PyPI](https://pypi.org/project/service-token-issuer-store/)

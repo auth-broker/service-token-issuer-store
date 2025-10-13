@@ -25,8 +25,8 @@ dependencies = [
   "pydantic[email]>=2.11.7,<3",
   "uvicorn>=0.35.0,<0.36"
 ]
-description = "A template package template."
-name = "ab-template-service"
+description = "FastAPI service for storing user managed token issuer configurations."
+name = "ab-token-issuer-store-service"
 readme = "README.md"
 requires-python = ">=3.12, <4"
 version = "0.2.1"
