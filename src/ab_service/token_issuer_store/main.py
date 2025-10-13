@@ -9,7 +9,7 @@ from ab_core.dependency import Depends, inject
 from ab_core.logging.config import LoggingConfig
 from fastapi import FastAPI
 
-from ab_service.template.routes.heartbeat import router as heartbeat_router
+from ab_service.token_issuer_store.routes.token_issuer import router as token_issuer_router
 
 
 @inject
@@ -27,4 +27,4 @@ async def lifespan(
 
 
 app = FastAPI(lifespan=lifespan)
-app.include_router(heartbeat_router)
+app.include_router(token_issuer_router)
