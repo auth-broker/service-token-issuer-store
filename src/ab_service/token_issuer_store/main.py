@@ -8,9 +8,11 @@ from ab_core.alembic_auto_migrate.service import AlembicAutoMigrate
 from ab_core.database.databases import Database
 from ab_core.dependency import Depends, inject
 from ab_core.logging.config import LoggingConfig
-from fastapi import FastAPI
-from ab_service.token_issuer_store.routes.token_issuer import router as token_issuer_router
 from ab_core.sqlalchemy_fastapi_http_exceptions import register_database_exception_handlers
+from fastapi import FastAPI
+
+from ab_service.token_issuer_store.routes.token_issuer import router as token_issuer_router
+
 logger = logging.getLogger(__name__)
 
 
@@ -26,6 +28,7 @@ async def lifespan(
     logging_config.apply()
     alembic_auto_migrate.run()
     yield
+
 
 app = FastAPI(lifespan=lifespan)
 register_database_exception_handlers(app)
