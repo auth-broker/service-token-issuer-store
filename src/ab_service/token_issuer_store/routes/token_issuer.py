@@ -8,7 +8,6 @@ from ab_core.token_issuer.token_issuers import TokenIssuer
 from fastapi import APIRouter, HTTPException
 from fastapi import Depends as FDepends
 from pydantic import TypeAdapter
-from pydantic_core.core_schema import CoreSchema
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ab_service.token_issuer_store.models.token_issuer import ManagedTokenIssuer
@@ -17,10 +16,10 @@ from ab_service.token_issuer_store.schema.token_issuer import CreateTokenIssuerR
 router = APIRouter(prefix="/token-issuer", tags=["Token Issuer"])
 
 
-@router.get("/schema", response_model=CoreSchema)
+@router.get("/schema")
 async def get_schema():
     """Return the discriminated-union schema (useful for dynamic forms)."""
-    return TypeAdapter(TokenIssuer).core_schema
+    return TypeAdapter(TokenIssuer).json_schema()
 
 
 @router.get("/{id}", response_model=ManagedTokenIssuer)
