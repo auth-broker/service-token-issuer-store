@@ -41,7 +41,7 @@ async def create(
 ):
     """Create a token issuer."""
     row = ManagedTokenIssuer(
-        # if you also added `name`, include: name=request.name,
+        name=request.name,
         token_issuer_json=request.token_issuer.model_dump(mode="json"),
         created_by=request.created_by,
     )
