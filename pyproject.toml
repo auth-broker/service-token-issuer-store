@@ -18,11 +18,11 @@ dev = [
 [project]
 authors = [{email = "53892067+mattcoulter7@users.noreply.github.com", name = "Matthew Coulter"}]
 dependencies = [
-  "ab-alembic-auto-migrate>=0.2.0,<1",
-  "ab-database[sqlite-async,postgres-sync,postgres-async]>=0.2.2,<1",
-  "ab-logging>=0.1.2",
-  "ab-sqlalchemy-fastapi-http-exceptions>=0.1.0",
-  "ab-token-issuer>=0.2.0",
+  "ab-alembic-auto-migrate>=0.2.0,<0.3.0",
+  "ab-database[sqlite-async,postgres-sync,postgres-async]>=0.2.2,<0.3.0",
+  "ab-logging>=0.1.2,<0.2.0",
+  "ab-sqlalchemy-fastapi-http-exceptions>=0.1.0,<0.2.0",
+  "ab-token-issuer>=0.2.0,<0.3.0",
   "fastapi>=0.115.14,<0.116",
   "pydantic[email]>=2.11.7,<3",
   "uvicorn>=0.35.0,<0.36",
@@ -31,7 +31,7 @@ description = "FastAPI service for storing user managed token issuer configurati
 name = "ab-token-issuer-store-service"
 readme = "README.md"
 requires-python = ">=3.12, <4"
-version = "0.2.1"
+version = "0.3.0"
 
 [tool.hatch.build.targets.sdist]
 include = ["src/ab_service"]
